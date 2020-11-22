@@ -10,5 +10,6 @@ import org.springframework.context.annotation.Configuration;
 public class Conf {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Conf.class);
+        context.getBean(MessageService.class).sendMessages();
     }
 }

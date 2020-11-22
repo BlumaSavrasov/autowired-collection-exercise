@@ -3,16 +3,15 @@ package autowird_collection;
 
 import org.springframework.stereotype.Component;
 
-import javax.annotation.PostConstruct;
 import java.util.List;
 
 @Component
-public class MassageService {
+public class MessageService {
     @AutowiredCollection({Telegram.class,WhatsApp.class})
     List<Message> messages;
 
-    @PostConstruct
-    void setMessages(){
+
+     public void sendMessages(){
         messages.forEach(Message::sendMessage);
     }
 }
